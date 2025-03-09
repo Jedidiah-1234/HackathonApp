@@ -27,6 +27,7 @@
                 margin-top: 10px;
             
             }
+            
 
             .top-right {
                 visibility: hidden;
@@ -38,6 +39,39 @@
 
 
         }
+
+        /* Styles for phones */
+        @media (max-width: 600px) {
+            /* Centered Mission Text */
+            .mission {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                font-size: 22px;
+                font-weight: 500;
+                line-height: 1.6; /* Better spacing for readability */
+                letter-spacing: 0.5px; /* Subtle spacing for a clean look */
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Adds a soft glow */
+                color: rgba(255, 255, 255, 0.9);
+                background: rgba(0, 0, 0, 0.4);
+                border-radius: 10px;
+                padding: 20px;
+                width: 60%;
+                margin-top: 40px;
+            
+            }
+
+            .top-right {
+                visibility: hidden;
+            }
+
+            .mission p{
+                font-size: 16px;
+            }
+        }
+        
         body {
             margin: 0;
             padding: 0;

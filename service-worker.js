@@ -29,7 +29,21 @@ const urlsToCache = [
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(urlsToCache);
+      return Promise.all(
+        urlsToCache.map((url) => {
+          return fetch(url).then((response) => {
+            if (response.ok) {
+              console.log(`Caching: ${url}`);
+              return cache.put(url, response);
+            } else {
+              console.error(`Failed to fetch: ${url}`);
+              return Promise.reject(`Failed to cache: ${url}`);
+            }
+          });
+        })
+      ).catch((error) => {
+        console.error("Error during service worker installation:", error);
+      });
     })
   );
 });

@@ -2,18 +2,18 @@
     "name": "Travel Tunes",
     "short_name": "Travel Tunes",
     "description": "Audio tour guide application For all your needs!",
-    "start_url": "/AudioGuide.html",
+    "start_url": "/HackathonApp/AudioGuide.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",
     "icons": [
       {
-        "src": "/logo192.png",
+        "src": "/HackathonApp/logo192.png",
         "sizes": "192x192",
         "type": "image/png"
       },
       {
-        "src": "/logo.png",
+        "src": "/HackathonApp/logo.png",
         "sizes": "512x512",
         "type": "image/png"
       }

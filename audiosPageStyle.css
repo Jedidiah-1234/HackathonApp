@@ -1,0 +1,219 @@
+
+
+/* Styles for tablets (screen width 768px to 1024px) */
+@media (max-width: 1024px) {
+    .animated-text h3 {
+        visibility: hidden;
+    }
+
+    
+    .displayRow {
+        width: 100%;
+        border: #000000;
+        border-width: 4px;
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Center columns horizontally */
+        background-color: #F1E9DB;
+        padding: 0;
+        margin: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .displayCell {
+        background-color: #42858C;
+        max-width: 400px;
+        align-self: center;
+        border-radius: 20%;
+        margin: 10px 0; /* Add spacing between cells */
+        display: flex; /* Flex container for vertical stacking */
+        flex-direction: column; 
+        overflow: hidden;
+    }
+
+    .displayCellDescription {
+        background-color: #42858C;
+        height: auto; /* Allow content height to grow naturally */
+        width: 100%;
+        max-width: 400px;
+        text-align: center;  /* Ensure text is centered */
+        display: block;  /* Ensure it doesn't inherit flex properties from parent */
+        padding: 2px;
+        justify-content: center; /* Vertically center the content */
+        align-items: center; /* Vertically center the content */
+    }
+    
+
+    .displayCellImage {
+        height: 200px; /* Set a specific height to make the images visible */
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        background-image: var(--bg-image); /* Ensure background image is applied correctly */
+        margin: 0;
+    }
+    
+}
+
+/* Default Styles */
+.displayRow {
+    width: 100%;
+    border: #000000;
+    border-width: 4px;
+    display: flex;
+    justify-content: center; /* Ensure columns are centered */
+    background-color: #F1E9DB;
+    padding: 0;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+body {
+    background-color: #F1E9DB;
+}
+
+.displayColumn {
+    flex: 1;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20%;
+}
+
+.displayCell {
+    background-color: #42858C;
+    max-width: 300px;
+    align-self: center;
+    border-radius: 20%;
+    height: auto; /* Set height to auto to adjust content dynamically */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.displayCellImage {
+    height: 200px; /* Set a fixed height for images */
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    background-image: var(--bg-image);
+    margin: 0;
+}
+
+.displayCellDescription {
+    background-color: #42858C;
+    height: auto; /* Allow content height to grow naturally */
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.displayCellDescription p {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Header CSS */
+
+/* Header styles */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0A192F;
+    background-image: url('Dundee.jpg'); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed; /* Fixes it to the top */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full width */
+    height: 80px;
+    padding-bottom:7px;
+}
+
+
+
+.top-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+    animation-delay: 1.5s;
+}
+.top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+    animation-delay: 1.5s;
+}
+button {
+    background-color: #0A192F;
+    border: 2px solid #FFC857;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.animated-text {
+    font-size: 100px;
+    font-weight: bold;
+    animation: slideUp 1.5s forwards;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(238, 235, 235, 0.3);
+}
+.fade-in-text {
+    font-size: 24px;
+    font-weight: normal;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+    animation-delay: 1.5s;
+    color: #ffffff;
+    border-color: #000000;
+    border-width: 4px;
+    margin-top: 0px;
+}
+input[type="text"] {
+    padding: 4px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+@keyframes slideUp {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(1px);
+    }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+main{
+    padding-top: 80px;
+}

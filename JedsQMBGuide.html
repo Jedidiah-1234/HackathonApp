@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Jed's QMB Guide</title>
+    <style>
+         /* Responsive styles */
+         @media (max-width: 1000px) {
+            .content-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .main-left img {
+                max-width: 100%;
+            }
+
+            .audio-text {
+                max-width: 100%;
+            }
+
+            .top-right {
+                position: static;
+                text-align: center;
+            }
+        }
+        body
+        {
+            background-color: #0A192F;
+        }
+        
+        .top-right {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            
+        }
+
+        button {
+            background-color: #0A192F;
+            border: 2px solid #FFC857;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+
+        .content-container {
+            display: flex;
+            align-items: center; 
+            justify-content: flex-start; 
+            gap: 100px; 
+            color: #fefcfc;
+        }
+
+        
+        .main-left img {
+            max-width: 500px; 
+            height: auto;
+        }
+
+        
+        .audio-text {
+            max-width: 600px; 
+        }
+
+        
+        h1 {
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+        }
+
+        .location {
+            margin-top: 20px; 
+            font-size: 1.2rem;
+            color: #fefcfc;
+            font-style: italic;
+        }
+
+                
+        .map-container {
+            margin-top: 20px;
+            align-items: center;
+            width: 100%;
+            height: 400px; 
+            border: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Jed's QMB Guide</h1>
+        
+        <section class="top-right">   
+                <button onclick="window.location.href ='audiosPage.html' ">Back</button>
+        </section>
+            
+    </header>
+
+    
+
+    <main>
+        <section class="content-container">
+            
+            <section class="main-left">
+                <img src="Campus_Image.JPG" alt="Dundee Campus">
+            </section>
+
+            
+            <section class="audio-text">
+                <h1>Jed's QMB Guide</h1>
+                <p>New to the campus, plug some headphones in and learn about the magic that happens at the Dundee hub of computing.</p>
+                <p>Click play to listen to the audio:</p>
+                <audio controls>
+                    <source src="JedsQMBGuide.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </section>
+        </section>
+
+        <section class="location">
+            <p>Audio Starting Location:</p>
+        </section>
+
+        <section class="map-container">
+            <iframe width=100%  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d70515.29557854924!2d-2.96683325!3d56.47460035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48864144ab639cd3%3A0x94e43b1e384be52a!2sDundee!5e0!3m2!1sen!2suk!4v1741470758502!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            </iframe>
+        </section>
+    </main>
+
+</body>
+</html>

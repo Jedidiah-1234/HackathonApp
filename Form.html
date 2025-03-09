@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join us - Form</title>
+    <style>
+        
+        body {
+            background-color: #0A192F;
+            background: url('China.jpg') repeat center center;
+            background-size: cover;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: auto; 
+        }
+
+        
+        .overlay {
+            position: absolute; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: 100vh; 
+            backdrop-filter: blur(10px); 
+            background-color: rgba(10, 25, 47, 0.7); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 0; 
+        }
+
+        
+        form {
+            background-color: rgba(17, 34, 64, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            color: antiquewhite;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 50px;
+            font-weight: bold;
+            color: antiquewhite;
+            text-shadow: 2px 2px 4px rgba(238, 235, 235, 0.3);
+            text-align: center;
+        }
+
+        label {
+            font-size: 18px;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .top-right {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            
+        }
+
+        button {
+            background-color: #0A192F;
+            border: 2px solid #FFC857;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #FF4C4C;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="overlay">
+
+        <section class="top-right">   
+            <button onclick="window.location.href ='AudioGuide.html' ">Back</button>
+        
+        </section>
+
+        <form action="submit.php" method="POST" enctype="multipart/form-data">
+            <h1>Create Your Own Custom Audio Guide!!</h1>
+            <h2 style="text-align: center;">Help us deliver quality service to your fellow peers.</h2>
+
+            <label for="name">Your Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="title">Title of your audio book:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="search">Title by which to search:</label>
+            <input type="text" id="search" name="search" required>
+            <br><br>
+
+            <label for="description">A small description about your audio book</label><br>
+            <textarea type="text" id="description" name="description" required></textarea>
+            <br><br>
+
+            
+            <label for="audio">Upload Your Audio File:</label>
+            <input type="file" id="audio" name="audio" accept="audio/*" required>
+
+            
+            <label for="location">Enter Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter location" required>
+
+            
+            <button type="button" onclick="getLocation()">Use My Current Location</button>
+
+            <button type="submit" onclick="alert('Your from was submitted')">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    document.getElementById("location").value = 
+                        position.coords.latitude + ", " + position.coords.longitude;
+                });
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+    </script>
+</body>
+</html>
+

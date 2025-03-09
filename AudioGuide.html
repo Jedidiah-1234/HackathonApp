@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="manifest" href="/manifest.json">
+    <script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js")
+        .then(() => console.log("Service Worker Registered"))
+        .catch((err) => console.log("Service Worker Failed:", err));
+    }
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Tunes</title>
+    <style>
+        /* Styles for tablets (screen width 768px to 1024px) */
+        @media (max-width: 1024px) {
+            .top-right{
+                visibility: hidden;
+            }
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #0A192F;
+            background-image: url('Dundee.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            position: relative;
+        }
+        .top-left {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            opacity: 0;
+            animation: fadeIn 3s forwards;
+            animation-delay: 3.5s;
+        }
+        /* Top-Right Text */
+        .top-right {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 18px;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: rgb(255, 255, 255);
+            opacity: 0;
+            animation: fadeIn 3s forwards;
+            animation-delay: 3.5s;
+        }
+        
+        button {
+            background-color: #0A192F;
+            border: 2px solid #FFC857;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+        .animated-text {
+            font-size: 100px;
+            font-weight: bold;
+            animation: slideUp 2s forwards;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(238, 235, 235, 0.3);
+        }
+        .fade-in-text {
+            font-size: 24px;
+            font-weight: normal;
+            opacity: 0;
+            animation: fadeIn 3s forwards;
+            animation-delay: 3.5s;
+            color: #ffffff;
+            border-color: #000000;
+            border-width: 4px;
+            margin-top: 0px;
+            text-align: center;
+        }
+        .fade-in-button {
+            opacity: 0;
+            animation: fadeIn 3s forwards;
+            animation-delay: 3.5s;
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            padding: 4px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        @keyframes slideUp {
+            0% {
+                transform: translateY(200px);
+            }
+            100% {
+                transform: translateY(20px);
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-text"> <h2 onclick="window.location.href ='AudioGuide.html' ">Travel Tunes</h2></div>
+    <div class="top-left">
+        <button onclick="window.location.href ='OurMission.html' ">Our Mission</button>
+        <button onclick="window.location.href ='audiosPage.html'">Audio Guides</button>
+        <button onclick="window.location.href ='Form.html'">Join us</button>
+    </div>
+    
+    <div class="top-right"> Discover Dundee, One Tune at a Time</div>
+
+    <div class="fade-in-text">
+        <p>Why not kick start your new semester with an audio guide? These guides are created by the locals of Dundee, offering a unique perspective.</p> 
+        <p>Explore Dundee, One Guide at a Time</p>
+    </div>
+    <button class="fade-in-button" onclick="window.location.href ='audiosPage.html'">Let's a go!</button>
+</body>
+</html>
